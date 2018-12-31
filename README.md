@@ -41,3 +41,15 @@ After it is finished (it'll stop outputting further info and will allow you to e
 6. Now run `mkinitcpio -p linux48` to generate the initramfs images
 7. Assuming you are using GRUB as your bootloader, do: `grub-mkconfig -o /boot/grub/grub.cfg` it'll auto-detect the new kernel and add it to the boot-menu
 8. To customize the boot-order and other things, it is handy to use: `grub-customizer` available in the [default packages](https://www.archlinux.org/packages/community/x86_64/grub-customizer/). (install via `pacman -S grub-customizer` and then just open it or execute `grub-customizer` in your terminal)
+9. Install `pulseaudio` if you don't yet have it: `pacman -S pulseaudio`
+10. Next steps are taken from the previously mentioned [page](https://github.com/heikomat/linux/tree/cx2072x/cx2072x_fixes_and_manual) too; Get the needed config files:
+
+```
+sudo mkdir --parents /usr/share/alsa/ucm/chtcx2072x
+cd /usr/share/alsa/ucm/chtcx2072x
+sudo wget "https://raw.githubusercontent.com/heikomat/linux/cx2072x/cx2072x_fixes_and_manual/chtcx2072x/HiFi.conf"
+sudo wget "https://raw.githubusercontent.com/heikomat/linux/cx2072x/cx2072x_fixes_and_manual/chtcx2072x/chtcx2072x.conf"
+```
+
+11. Set `realtime-scheduling` to `realtime-scheduling = no` in `/etc/pulse/daemon.conf`
+12. Reboot
