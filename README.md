@@ -1,3 +1,7 @@
+# README!
+
+The instructions here were for an older branch (the current one is: "cx2072x_5.0" for kernel 5.0) and I currently don't have the necessary time to check if you can just replace the branch in the initial git clone to have it work again. I will update this in the near future, together with a docker build that automates all this. (which will become the main instructions source for this repo from there on)
+
 # Sound on e200ha with arch
 
 Big thanks to [heikomat](https://github.com/heikomat) - for keeping all the upcoming kernels patched for sound to work and [garchymede](https://github.com/garchymede/archlinux_on_asus_E200HA)'s repository for getting me into the right direction.
