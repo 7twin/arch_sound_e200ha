@@ -1,6 +1,6 @@
-# Kernel 4.20
+# Kernel 5.1
 
-Previous and future kernel versions are available as git-branches.
+Previous and future kernel versions are available as git-branches. These are the manual instructions, they will be accompanied by a docker based guided script in the near future - to automate most if not all of those instructions here.
 
 # Sound on e200ha with arch
 
@@ -16,7 +16,7 @@ Big parts of this tutorial are also directly taken from the [arch wiki](https://
 
 ### Server
 
-1. Execute `git clone --branch cx2072x https://github.com/heikomat/linux.git` to get the newest kernel files provided by heikomat
+1. Execute `git clone --branch v5.1_cx2072x https://github.com/heikomat/linux.git` to get the newest kernel files provided by heikomat
 2. `cd` into the now cloned folder: `cd linux`
 3. Do `make clean && make menuconfig`
 4. Follow the instructions and activate the items that are described [here](https://github.com/heikomat/linux/blob/cx2072x/cx2072x_fixes_and_manual/building_the_kernel.md#configuring) as of today those are:
@@ -30,7 +30,7 @@ Big parts of this tutorial are also directly taken from the [arch wiki](https://
 
 After it is finished (it'll stop outputting further info and will allow you to enter commands again) download/transfer the `linux` folder to e.g. some usb stick, you can zip it up to save some time by executing `zip -9 -r linux.zip linux/` outside the linux folder, remember to unzip it on your usb-stick later on.
 
-**Note:** With the release of the 4.20 kernel I had to also after unzipping make sure `/net/netfilter/xt_rateest.ko` was renamed to `/net/netfilter/xt_RATEEST.ko` or else the install later in the `e200ha` step would fail. If the install further fails, look closely at what it says, the errors are very descriptive and can easily tell you what is missing or has to be done. (e.g. on windows unarchiving the zip file sometimes can lead to warnings and not unpack all things in the `/net` folder, so then you would just drag & drop the net folder into the unarchived space and just press `skip` when it asks you to overwrite existing files, so it only extracts what is missing)
+**Note:** If the install fails, look closely at what it says, the errors are very descriptive and can easily tell you what is missing or has to be done. (e.g. on windows unarchiving the zip file sometimes can lead to warnings and not unpack all things in the `/net` folder, so then you would just drag & drop the net folder into the unarchived space and just press `skip` when it asks you to overwrite existing files, so it only extracts what is missing)
 
 ### e200ha
 
