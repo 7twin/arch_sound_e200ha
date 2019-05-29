@@ -16,7 +16,7 @@ Big parts of this tutorial are also directly taken from the [arch wiki](https://
 
 ### Server
 
-1. Execute `git clone --branch v5.1_cx2072x https://github.com/heikomat/linux.git` to get the newest kernel files provided by heikomat
+1. Execute `git clone --branch cx2072x https://github.com/heikomat/linux.git` to get the newest kernel files provided by heikomat
 2. `cd` into the now cloned folder: `cd linux`
 3. Do `make clean && make menuconfig`
 4. Follow the instructions and activate the items that are described [here](https://github.com/heikomat/linux/blob/cx2072x/cx2072x_fixes_and_manual/building_the_kernel.md#configuring) as of today those are:
@@ -49,10 +49,10 @@ After it is finished (it'll stop outputting further info and will allow you to e
 10. Next steps are taken from the previously mentioned [page](https://github.com/heikomat/linux/tree/cx2072x/cx2072x_fixes_and_manual) too; Get the needed config files:
 
 ```
-sudo mkdir --parents /usr/share/alsa/ucm/chtcx2072x
-cd /usr/share/alsa/ucm/chtcx2072x
-sudo wget "https://raw.githubusercontent.com/heikomat/linux/cx2072x/cx2072x_fixes_and_manual/chtcx2072x/HiFi.conf"
-sudo wget "https://raw.githubusercontent.com/heikomat/linux/cx2072x/cx2072x_fixes_and_manual/chtcx2072x/chtcx2072x.conf"
+sudo mkdir --parents /usr/share/alsa/ucm/bytcht-cx2072x
+cd /usr/share/alsa/ucm/bytcht-cx2072x
+sudo wget "https://raw.githubusercontent.com/heikomat/linux/cx2072x/cx2072x_fixes_and_manual/bytcht-cx2072x/HiFi.conf"
+sudo wget "https://raw.githubusercontent.com/heikomat/linux/cx2072x/cx2072x_fixes_and_manual/bytcht-cx2072x/bytcht-cx2072x.conf"
 ```
 
 11. Set `realtime-scheduling` to `realtime-scheduling = no` in `/etc/pulse/daemon.conf`
